@@ -22526,7 +22526,17 @@ var _react = __webpack_require__(49);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _TaskList = __webpack_require__(188);
+
+var _TaskList2 = _interopRequireDefault(_TaskList);
+
+var _AddTask = __webpack_require__(190);
+
+var _AddTask2 = _interopRequireDefault(_AddTask);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22538,18 +22548,68 @@ var App = function (_React$Component) {
     _inherits(App, _React$Component);
 
     function App() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 6, _this.state = {
+            tasks: [{
+                id: 0,
+                text: 'Zagrac w końcu w Wiedzmina 3'
+            }, {
+                id: 1,
+                text: 'Zrobić dobry uczynek'
+            }, {
+                id: 2,
+                text: 'pomalować dom po sylwestrze'
+            }, {
+                id: 3,
+                text: 'schudnąć 30 kilogramów'
+            }, {
+                id: 4,
+                text: 'sprzedac butelki po piwie (20 skrzynek)'
+            }, {
+                id: 5,
+                text: 'jeszcze raz pomalować dom'
+            }]
+        }, _this.addTask = function (text) {
+
+            var task = {
+                id: _this.counter,
+                text: text
+            };
+            _this.counter++;
+            console.log(_this.counter, task);
+
+            _this.setState(function (prevState) {
+                return {
+                    tasks: [].concat(_toConsumableArray(prevState.tasks), [task])
+                };
+            });
+
+            return true;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(App, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "App" },
-                "Dzia\u0142a"
+                'div',
+                { className: 'App' },
+                _react2.default.createElement(
+                    'h1',
+                    null,
+                    'TODO-App'
+                ),
+                _react2.default.createElement(_AddTask2.default, { add: this.addTask }),
+                _react2.default.createElement(_TaskList2.default, { tasks: this.state.tasks })
             );
         }
     }]);
@@ -22558,6 +22618,165 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Task = __webpack_require__(189);
+
+var _Task2 = _interopRequireDefault(_Task);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TaskList = function TaskList(props) {
+
+    var currentTasks = props.tasks.map(function (task) {
+        return _react2.default.createElement(_Task2.default, {
+            key: task.id,
+            task: task
+        });
+    });
+
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h2',
+            null,
+            'Lista zada\u0144'
+        ),
+        currentTasks
+    );
+};
+
+exports.default = TaskList;
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Task = function Task(props) {
+    var text = props.task.text;
+
+
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'strong',
+            null,
+            text
+        )
+    );
+};
+
+exports.default = Task;
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddTask = function (_React$Component) {
+    _inherits(AddTask, _React$Component);
+
+    function AddTask() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, AddTask);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddTask.__proto__ || Object.getPrototypeOf(AddTask)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            text: ''
+        }, _this.handleText = function (e) {
+            _this.setState({
+                text: e.target.value
+            });
+        }, _this.handleAddTask = function () {
+            var text = _this.state.text;
+
+
+            var add = _this.props.add(text);
+
+            if (add) {
+                _this.setState({
+                    text: ''
+                });
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(AddTask, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'form' },
+                _react2.default.createElement('input', { type: 'text', placeholder: 'Wpisz tre\u015B\u0107 zadania', value: this.state.text,
+                    onChange: this.handleText }),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.handleAddTask },
+                    'Add'
+                )
+            );
+        }
+    }]);
+
+    return AddTask;
+}(_react2.default.Component);
+
+exports.default = AddTask;
 
 /***/ })
 /******/ ]);
