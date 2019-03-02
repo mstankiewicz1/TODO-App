@@ -10,6 +10,7 @@ const TaskList = (props) => {
                 number={task.number}
                 task={task}
                 delete={props.delete}
+                clear={props.clear}
             />
         );
 

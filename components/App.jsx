@@ -2,6 +2,7 @@ import React from 'react';
 import TaskList from './TaskList.jsx';
 import AddTask from './AddTask.jsx';
 import DeleteTask from './DeleteTask.jsx';
+import ClearAllTasks from './ClearAllTasks.jsx';
 
 
 
@@ -53,7 +54,6 @@ class App extends React.Component {
             text: text,
         };
         this.counter++;
-        console.log(this.counter, task);
 
         this.setState(prevState => ({
             tasks: [...prevState.tasks, task]
@@ -73,6 +73,12 @@ class App extends React.Component {
       })
     };
 
+    handleClearTasks = () => {
+        this.setState({
+            tasks: [],
+        })
+    };
+
 
 
     render() {
@@ -81,6 +87,7 @@ class App extends React.Component {
                 <h1>TODO-App</h1>
                 <AddTask add={this.addTask}/>
                 <DeleteTask delete={this.deleteTask}/>
+                <ClearAllTasks clear={this.handleClearTasks}/>
                 <TaskList tasks={this.state.tasks}/>
             </div>
         )
