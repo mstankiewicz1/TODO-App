@@ -7,7 +7,9 @@ const TaskList = (props) => {
         const currentTasks = props.tasks.map(task =>
             <Task
                 key={task.id}
+                number={task.number}
                 task={task}
+                delete={props.delete}
             />
         );
 
@@ -15,7 +17,7 @@ const TaskList = (props) => {
         return (
             <div>
                 <h2>Lista zadań</h2>
-                {currentTasks}
+                {currentTasks.length > 0 ? currentTasks : <p>Brak zadań do zrobienia</p>}
             </div>
         )
     };

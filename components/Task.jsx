@@ -3,11 +3,11 @@ import React from 'react';
 const Task = (props) => {
 
 
-    const {text} = props.task;
+    const {text, number} = props.task;
 
     return (
         <div>
-            <strong>{text}</strong>
+            <em>{number}</em><strong>{text}</strong>
         </div>
     )
 };
