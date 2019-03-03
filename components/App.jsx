@@ -16,31 +16,37 @@ class App extends React.Component {
                 id: 0,
                 number: 1,
                 text: 'Zagrac w końcu w Wiedzmina 3',
+                edit: false
             },
             {
                 id: 1,
                 number: 2,
                 text: 'Zrobić dobry uczynek',
+                edit: false
             },
             {
                 id: 2,
                 number: 3,
                 text: 'pomalować dom po sylwestrze',
+                edit: false
             },
             {
                 id: 3,
                 number: 4,
                 text: 'schudnąć 30 kilogramów',
+                edit: false
             },
             {
                 id: 4,
                 number: 5,
                 text: 'sprzedac butelki po piwie (20 skrzynek)',
+                edit: false
             },
             {
                 id: 5,
                 number: 6,
                 text: 'jeszcze raz pomalować dom',
+                edit: false
             },
         ]
     };
@@ -80,10 +86,9 @@ class App extends React.Component {
     };
 
 
-
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 <h1>TODO-App</h1>
                 <AddTask add={this.addTask}/>
                 <DeleteTask delete={this.deleteTask}/>

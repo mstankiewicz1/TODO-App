@@ -3,7 +3,6 @@ import Task from './Task.jsx';
 
 const TaskList = (props) => {
 
-
         const currentTasks = props.tasks.map(task =>
             <Task
                 key={task.id}
@@ -18,7 +17,9 @@ const TaskList = (props) => {
         return (
             <div>
                 <h2>Lista zadań</h2>
-                {currentTasks.length > 0 ? currentTasks : <p>Brak zadań do zrobienia</p>}
+                <div className="taskList">
+                    {currentTasks.length > 0 ? currentTasks : <p>Brak zadań do zrobienia</p>}
+                </div>
             </div>
         )
     };

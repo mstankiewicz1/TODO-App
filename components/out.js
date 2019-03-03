@@ -22570,27 +22570,33 @@ var App = function (_React$Component) {
             tasks: [{
                 id: 0,
                 number: 1,
-                text: 'Zagrac w końcu w Wiedzmina 3'
+                text: 'Zagrac w końcu w Wiedzmina 3',
+                edit: false
             }, {
                 id: 1,
                 number: 2,
-                text: 'Zrobić dobry uczynek'
+                text: 'Zrobić dobry uczynek',
+                edit: false
             }, {
                 id: 2,
                 number: 3,
-                text: 'pomalować dom po sylwestrze'
+                text: 'pomalować dom po sylwestrze',
+                edit: false
             }, {
                 id: 3,
                 number: 4,
-                text: 'schudnąć 30 kilogramów'
+                text: 'schudnąć 30 kilogramów',
+                edit: false
             }, {
                 id: 4,
                 number: 5,
-                text: 'sprzedac butelki po piwie (20 skrzynek)'
+                text: 'sprzedac butelki po piwie (20 skrzynek)',
+                edit: false
             }, {
                 id: 5,
                 number: 6,
-                text: 'jeszcze raz pomalować dom'
+                text: 'jeszcze raz pomalować dom',
+                edit: false
             }]
         }, _this.addTask = function (text) {
 
@@ -22628,7 +22634,7 @@ var App = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'App' },
+                { className: 'app' },
                 _react2.default.createElement(
                     'h1',
                     null,
@@ -22688,10 +22694,14 @@ var TaskList = function TaskList(props) {
             null,
             'Lista zada\u0144'
         ),
-        currentTasks.length > 0 ? currentTasks : _react2.default.createElement(
-            'p',
-            null,
-            'Brak zada\u0144 do zrobienia'
+        _react2.default.createElement(
+            'div',
+            { className: 'taskList' },
+            currentTasks.length > 0 ? currentTasks : _react2.default.createElement(
+                'p',
+                null,
+                'Brak zada\u0144 do zrobienia'
+            )
         )
     );
 };
@@ -22726,12 +22736,12 @@ var Task = function Task(props) {
         null,
         _react2.default.createElement(
             'em',
-            null,
-            number
+            { className: 'singleNumber' },
+            number + '. '
         ),
         _react2.default.createElement(
             'strong',
-            null,
+            { className: 'singleTask' },
             text
         )
     );
@@ -22809,11 +22819,11 @@ var AddTask = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'form' },
-                _react2.default.createElement('input', { type: 'text', placeholder: 'Wpisz tre\u015B\u0107 zadania', value: this.state.text,
+                _react2.default.createElement('input', { className: 'addInput', type: 'text', placeholder: 'Wpisz tre\u015B\u0107 zadania', value: this.state.text,
                     onChange: this.handleText }),
                 _react2.default.createElement(
                     'button',
-                    { onClick: this.handleAddTask },
+                    { className: 'addTaskButton', onClick: this.handleAddTask },
                     'Add'
                 )
             );
@@ -22845,12 +22855,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var DeleteTask = function DeleteTask(props) {
 
     return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-            'button',
-            { onClick: props.delete },
-            'Remove'
+            "button",
+            { className: "removeButton", onClick: props.delete },
+            "Remove"
         )
     );
 };
@@ -22877,12 +22887,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ClearAllTasks = function ClearAllTasks(props) {
 
     return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-            'button',
-            { onClick: props.clear },
-            'Clear'
+            "button",
+            { className: "clearButton", onClick: props.clear },
+            "Clear"
         )
     );
 };

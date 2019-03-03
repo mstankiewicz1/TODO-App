@@ -6,7 +6,7 @@ const ClearAllTasks = (props) => {
 
     return (
         <div>
-            <button onClick={props.clear}>Clear</button>
+            <button className="clearButton" onClick={props.clear}>Clear</button>
         </div>
     )
 };

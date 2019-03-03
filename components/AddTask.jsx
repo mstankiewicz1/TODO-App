@@ -37,9 +37,9 @@ class AddTask extends React.Component {
     render() {
         return (
             <div className="form">
-                <input type="text" placeholder="Wpisz treść zadania" value={this.state.text}
+                <input className="addInput" type="text" placeholder="Wpisz treść zadania" value={this.state.text}
                        onChange={this.handleText}/>
-                <button onClick={this.handleAddTask}>Add</button>
+                <button className="addTaskButton" onClick={this.handleAddTask}>Add</button>
             </div>
         )
     }

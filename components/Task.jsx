@@ -7,7 +7,7 @@ const Task = (props) => {
 
     return (
         <div>
-            <em>{number}</em><strong>{text}</strong>
+            <em className="singleNumber">{number + '. '}</em><strong className="singleTask">{text}</strong>
         </div>
     )
 };

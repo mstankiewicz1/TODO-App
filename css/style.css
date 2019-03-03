@@ -1,3 +1,101 @@
-.App {
-    text-align: center;
+body {
+    position: relative;
+    background-color: black;
 }
+
+.app {
+    position: absolute;
+    top: 60px;
+    left: 30%;
+    text-align: center;
+    border: 2px solid #92784F;
+    border-radius: 10px;
+    width: 40%;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #92784F;
+}
+
+h2 {
+    color: #92784F;
+}
+
+.taskList {
+    color: #92784F;
+    margin-bottom: 25px;
+}
+
+.singleTask {
+    font-size: 18px;
+}
+
+.singleNumber {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.addTaskButton, .removeButton, .clearButton {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.addTaskButton {
+    margin-left: 10px;
+    background-color: #25441B;
+    color: #5CA742;
+}
+
+.addTaskButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.removeButton {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #55080A;
+    color: #EF1E21;
+}
+
+.removeButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.clearButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #55080A;
+    color: #EF1E21;
+}
+
+.clearButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.addInput {
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid #92784F;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+p {
+    color: #92784F;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+

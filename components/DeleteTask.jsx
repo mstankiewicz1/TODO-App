@@ -6,7 +6,7 @@ const DeleteTask = (props) => {
 
     return (
         <div>
-            <button onClick={props.delete}>Remove</button>
+            <button className="removeButton" onClick={props.delete}>Remove</button>
         </div>
     )
 };
