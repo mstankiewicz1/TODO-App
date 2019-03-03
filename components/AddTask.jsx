@@ -18,8 +18,6 @@ class AddTask extends React.Component {
 
         const {text} = this.state;
 
-        if(text.length >= 3) {
-
             const add = this.props.add(text);
 
             if (add) {
@@ -27,10 +25,7 @@ class AddTask extends React.Component {
                     text: '',
                 })
             }
-        } else {
-            console.log("Proszę podać minimum 3 znaki");
-        }
-    };
+        };
 
 
 

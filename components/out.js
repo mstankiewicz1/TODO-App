@@ -22566,38 +22566,8 @@ var App = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 1, _this.state = {
-            tasks: [{
-                id: 0,
-                number: 1,
-                text: 'Zagrac w końcu w Wiedzmina 3',
-                edit: false
-            }, {
-                id: 1,
-                number: 2,
-                text: 'Zrobić dobry uczynek',
-                edit: false
-            }, {
-                id: 2,
-                number: 3,
-                text: 'pomalować dom po sylwestrze',
-                edit: false
-            }, {
-                id: 3,
-                number: 4,
-                text: 'schudnąć 30 kilogramów',
-                edit: false
-            }, {
-                id: 4,
-                number: 5,
-                text: 'sprzedac butelki po piwie (20 skrzynek)',
-                edit: false
-            }, {
-                id: 5,
-                number: 6,
-                text: 'jeszcze raz pomalować dom',
-                edit: false
-            }]
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            tasks: []
         }, _this.addTask = function (text) {
 
             var currentId = _this.state.tasks.length;
@@ -22608,7 +22578,6 @@ var App = function (_React$Component) {
                 number: currentNumber,
                 text: text
             };
-            _this.counter++;
 
             _this.setState(function (prevState) {
                 return {
@@ -22801,17 +22770,12 @@ var AddTask = function (_React$Component) {
             var text = _this.state.text;
 
 
-            if (text.length >= 3) {
+            var add = _this.props.add(text);
 
-                var add = _this.props.add(text);
-
-                if (add) {
-                    _this.setState({
-                        text: ''
-                    });
-                }
-            } else {
-                console.log("Proszę podać minimum 3 znaki");
+            if (add) {
+                _this.setState({
+                    text: ''
+                });
             }
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }

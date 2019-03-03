@@ -35,7 +35,6 @@ h2 {
 .singleNumber {
     font-size: 18px;
     font-weight: bold;
-
 }
 
 .addTaskButton, .removeButton, .clearButton {
@@ -44,17 +43,20 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
     font-weight: 700;
+    transition-duration: .4s;
 }
 
 .addTaskButton {
     margin-left: 10px;
     background-color: #25441B;
     color: #5CA742;
+
 }
 
 .addTaskButton:hover {
     color: white;
     cursor: pointer;
+
 }
 
 .removeButton {
@@ -89,7 +91,7 @@ h2 {
     background-color: black;
     color: white;
     padding-left: 20px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 p {

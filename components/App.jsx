@@ -5,50 +5,11 @@ import DeleteTask from './DeleteTask.jsx';
 import ClearAllTasks from './ClearAllTasks.jsx';
 
 
-
 class App extends React.Component {
 
-    counter = 1;
 
     state = {
-        tasks: [
-            {
-                id: 0,
-                number: 1,
-                text: 'Zagrac w końcu w Wiedzmina 3',
-                edit: false
-            },
-            {
-                id: 1,
-                number: 2,
-                text: 'Zrobić dobry uczynek',
-                edit: false
-            },
-            {
-                id: 2,
-                number: 3,
-                text: 'pomalować dom po sylwestrze',
-                edit: false
-            },
-            {
-                id: 3,
-                number: 4,
-                text: 'schudnąć 30 kilogramów',
-                edit: false
-            },
-            {
-                id: 4,
-                number: 5,
-                text: 'sprzedac butelki po piwie (20 skrzynek)',
-                edit: false
-            },
-            {
-                id: 5,
-                number: 6,
-                text: 'jeszcze raz pomalować dom',
-                edit: false
-            },
-        ]
+        tasks: []
     };
 
 
@@ -62,7 +23,6 @@ class App extends React.Component {
             number: currentNumber,
             text: text,
         };
-        this.counter++;
 
         this.setState(prevState => ({
             tasks: [...prevState.tasks, task]
