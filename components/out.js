@@ -22566,7 +22566,7 @@ var App = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 7, _this.state = {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 1, _this.state = {
             tasks: [{
                 id: 0,
                 number: 1,
@@ -22600,9 +22600,12 @@ var App = function (_React$Component) {
             }]
         }, _this.addTask = function (text) {
 
+            var currentId = _this.state.tasks.length;
+            var currentNumber = _this.state.tasks.length + 1;
+
             var task = {
-                id: _this.counter,
-                number: _this.counter,
+                id: currentId,
+                number: currentNumber,
                 text: text
             };
             _this.counter++;

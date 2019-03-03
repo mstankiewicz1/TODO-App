@@ -8,7 +8,7 @@ import ClearAllTasks from './ClearAllTasks.jsx';
 
 class App extends React.Component {
 
-    counter = 7;
+    counter = 1;
 
     state = {
         tasks: [
@@ -54,9 +54,12 @@ class App extends React.Component {
 
     addTask = (text) => {
 
+        const currentId = this.state.tasks.length;
+        const currentNumber = this.state.tasks.length + 1;
+
         const task = {
-            id: this.counter,
-            number: this.counter,
+            id: currentId,
+            number: currentNumber,
             text: text,
         };
         this.counter++;
